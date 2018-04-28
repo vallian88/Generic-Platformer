@@ -10,6 +10,8 @@ extents = Vector2( 16, 16 )
 
 [node name="Node" type="Node"]
 
+editor/display_folded = true
+
 [node name="01" type="Sprite" parent="." index="0"]
 
 editor/display_folded = true
@@ -31,6 +33,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="01/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -57,6 +60,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="02/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -83,6 +87,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="03/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -109,13 +114,13 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="04/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="05" type="Sprite" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 0, 128 )
 texture = ExtResource( 1 )
 centered = false
@@ -123,49 +128,7 @@ region_enabled = true
 region_rect = Rect2( 64, 64, 32, 32 )
 _sections_unfolded = [ "Offset", "Region", "Visibility" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="05" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="05/StaticBody2D" index="0"]
-
-position = Vector2( 16, 16 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="06" type="Sprite" parent="." index="5"]
-
-editor/display_folded = true
-position = Vector2( 64, 128 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 64, 32, 32, 32 )
-_sections_unfolded = [ "Offset", "Region", "Visibility" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="06" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="06/StaticBody2D" index="0"]
-
-position = Vector2( 16, 16 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="07" type="Sprite" parent="." index="6"]
+[node name="07" type="Sprite" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 0, 192 )
@@ -187,11 +150,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="07/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="08" type="Sprite" parent="." index="7"]
+[node name="08" type="Sprite" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 64, 192 )
@@ -213,11 +177,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="08/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="09" type="Sprite" parent="." index="8"]
+[node name="09" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 0, 256 )
@@ -239,11 +204,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="09/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="10" type="Sprite" parent="." index="9"]
+[node name="10" type="Sprite" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 64, 256 )
@@ -265,11 +231,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="10/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="11" type="Sprite" parent="." index="10"]
+[node name="11" type="Sprite" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 0, 320 )
@@ -291,11 +258,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="11/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="12" type="Sprite" parent="." index="11"]
+[node name="12" type="Sprite" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( 64, 320 )
@@ -317,11 +285,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="12/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="13" type="Sprite" parent="." index="12"]
+[node name="13" type="Sprite" parent="." index="11"]
 
 editor/display_folded = true
 position = Vector2( 0, 384 )
@@ -343,11 +312,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="13/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="14" type="Sprite" parent="." index="13"]
+[node name="14" type="Sprite" parent="." index="12"]
 
 editor/display_folded = true
 position = Vector2( 64, 384 )
@@ -359,6 +329,7 @@ _sections_unfolded = [ "Offset", "Region", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="14" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -369,11 +340,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="14/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="15" type="Sprite" parent="." index="14"]
+[node name="15" type="Sprite" parent="." index="13"]
 
 editor/display_folded = true
 position = Vector2( 0, 448 )
@@ -395,11 +367,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="15/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="16" type="Sprite" parent="." index="15"]
+[node name="16" type="Sprite" parent="." index="14"]
 
 editor/display_folded = true
 position = Vector2( 64, 448 )
@@ -421,11 +394,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="16/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="17" type="Sprite" parent="." index="16"]
+[node name="17" type="Sprite" parent="." index="15"]
 
 editor/display_folded = true
 position = Vector2( 0, 512 )
@@ -447,11 +421,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="17/StaticBody2D" index="0"]
 
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="18" type="Sprite" parent="." index="17"]
+[node name="18" type="Sprite" parent="." index="16"]
 
 editor/display_folded = true
 position = Vector2( 64, 512 )
@@ -473,6 +448,34 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="18/StaticBody2D" index="0"]
 
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="06" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 64, 128 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 96, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="06" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="06/StaticBody2D" index="0"]
+
+visible = false
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
