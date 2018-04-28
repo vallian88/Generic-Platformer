@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=2]
-[ext_resource path="res://DirtAutoTile.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DirtAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=3]
 
 [node name="World2" type="Node" index="0"]
 
@@ -10,15 +10,11 @@
 
 position = Vector2( 160, 256 )
 
-[node name="WorldComplete" parent="." index="1" instance=ExtResource( 2 )]
+[node name="TileMap" type="TileMap" parent="." index="1"]
 
-position = Vector2( 448, 192 )
-world_scene = "res://StartMenu.tscn"
-
-[node name="TileMap" type="TileMap" parent="." index="2"]
-
+position = Vector2( -22, -31 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -33,6 +29,11 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 0, 5, 9, 0, 5, 65536, 0, 65541, 65545, 0, 65541, 131072, 0, 65541, 131077, 0, 5, 131081, 0, 65541, 196608, 0, 65541, 196612, 0, 6, 196613, 0, 65543, 196617, 0, 65541, 262144, 0, 65541, 262147, 0, 1, 262148, 0, 11, 262153, 0, 65541, 327680, 0, 65542, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 65544, 327684, 0, 65547, 327685, 0, 196609, 327686, 0, 196609, 327687, 0, 196609, 327688, 0, 196609, 327689, 0, 65543 )
+tile_data = PoolIntArray( 0, 0, 5, 9, 0, 5, 65536, 0, 65541, 65545, 0, 65541, 131072, 0, 65541, 131077, 0, 5, 131081, 0, 65541, 196608, 0, 65541, 196612, 0, 1, 196613, 0, 11, 196617, 0, 65541, 262144, 0, 65541, 262147, 0, 1, 262148, 0, 65540, 262149, 0, 131074, 262153, 0, 65541, 327680, 0, 65542, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 65544, 327684, 0, 131072, 327685, 0, 65547, 327686, 0, 196609, 327687, 0, 196609, 327688, 0, 196609, 327689, 0, 65543 )
+
+[node name="WorldComplete" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 454.365, 157.803 )
+world_scene = "res://Scenes/World.tscn"
 
 

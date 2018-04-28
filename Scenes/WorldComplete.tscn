@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://WorldComplete.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/WorldComplete.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/star.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -27,7 +27,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="WorldComplete" type="Area2D" index="0"]
+[node name="WorldComplete" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
