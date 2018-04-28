@@ -4,13 +4,10 @@ const UP = Vector2(0,-1)
 const GRAVITY = 15
 const ACCEL = 50
 const MAX_SPEED = 200
-<<<<<<< HEAD
-const JUMP_HEIGHT = -500
-=======
 const JUMP_HEIGHT = -400
 var d_jump = false
 var grounded =  false
->>>>>>> DoubleJump
+
 
 var motion = Vector2()
 
