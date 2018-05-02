@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 96, 64 )
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -39,6 +39,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="DetailTiles" type="TileMap" parent="." index="2"]
 
+position = Vector2( -108.329, 0 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
