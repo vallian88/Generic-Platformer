@@ -1,6 +1,7 @@
 extends Node
 
-var props = {'move_state' : {
+var props = {
+    'move_state' : {
         'current' : 0,
         'TANG' : 0,
         'INTANG' : 1
@@ -13,5 +14,5 @@ var props = {'move_state' : {
 }
 
 func Change_prop(key,val):
-    
+    props[key]['current'] = val
     pass
