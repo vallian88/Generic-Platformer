@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_jungle_water.png-08360bc6cf486b0f338ee33fefd9efe6.stex"
+path="res://.import/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.stex"
 
 [deps]
 
-source_file="res://Sprites/Tiles/tile_jungle_water.png"
-source_md5="e8385ac4a4b8b887406d35c23e7132a7"
+source_file="res://Sprites/Platform.png"
+source_md5="e9f5c6845de1ebbac05452283c3f6f21"
 
-dest_files=[ "res://.import/tile_jungle_water.png-08360bc6cf486b0f338ee33fefd9efe6.stex" ]
-dest_md5="30480d620cbd8e86c4dacfe191e7879d"
+dest_files=[ "res://.import/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.stex" ]
+dest_md5="e64685cd972c70a0c389c4c9f9055377"
 
 [params]
 
