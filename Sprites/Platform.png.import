@@ -7,10 +7,10 @@ path="res://.import/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.stex"
 [deps]
 
 source_file="res://Sprites/Platform.png"
-source_md5="e9f5c6845de1ebbac05452283c3f6f21"
+source_md5="980ae15112eea1e136abfd1f498626b8"
 
 dest_files=[ "res://.import/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.stex" ]
-dest_md5="e64685cd972c70a0c389c4c9f9055377"
+dest_md5="191c0cc2e4c0cf9bcec2e47193defb4d"
 
 [params]
 
