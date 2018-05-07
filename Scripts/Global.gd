@@ -11,10 +11,11 @@ var props = {
         'VULN' : 0,
         'INVULN': 1,
     },
-	'special_state' : {
+	'physic_state' : {
 		'current' : 0,
 		'NORMAL' : 0,
 		'ZIPPING' : 1,
+		'NO_CLIP' : 2,
 	},
 	'physics' :{
 		'GRAVITY' : 0,
@@ -24,7 +25,8 @@ var props = {
 		'GROUNDED_FRICTION' : 0,
 		'AERIAL_FRICTION' : 0,
 		'COLLIDING' : false,
-		'SCREEN_WRAP' : false
+		'SCREEN_WRAP' : false,
+		'CANCEL_MOMENTUM' : false
 	}
 }
 
@@ -37,7 +39,8 @@ const PROP_TEMPLATES = {
 		'GROUNDED_FRICTION' : 0.2,
 		'AERIAL_FRICTION' : 0.175,
 		'COLLIDING' : true,
-		'SCREEN_WRAP' : false
+		'SCREEN_WRAP' : false,
+		'CANCEL_MOMENTUM' : false
 	},
 	'ZIPPING' : {
 		'GRAVITY' : 0,
@@ -47,7 +50,19 @@ const PROP_TEMPLATES = {
 		'GROUNDED_FRICTION' : 0,
 		'AERIAL_FRICTION' : 0,
 		'COLLIDING' : false,
-		'SCREEN_WRAP' : true
+		'SCREEN_WRAP' : true,
+		'CANCEL_MOMENTUM' : true
+	},
+	'DASHING' : {
+		'GRAVITY' : 0,
+		'ACCEL' : 0,
+ 		'MAX_SPEED' : 200,
+		'JUMP_HEIGHT' : 0,
+		'GROUNDED_FRICTION' : 0,
+		'AERIAL_FRICTION' : 0,
+		'COLLIDING' : false,
+		'SCREEN_WRAP' : false,
+		'CANCEL_MOMENTUM' : true
 	},
 	'NO_CLIP' : {
 		'GRAVITY' : 15,
@@ -57,15 +72,20 @@ const PROP_TEMPLATES = {
 		'GROUNDED_FRICTION' : 0.2,
 		'AERIAL_FRICTION' : 0.175,
 		'COLLIDING' : false,
-		'SCREEN_WRAP' : false
+		'SCREEN_WRAP' : false,
+		'CANCEL_MOMENTUM' : false
 	},
 }
-
-func Change_Prop(key,val):
-	props[key]['current'] = val
-	if props.special_state.current == 0:
+func _ready():
+	Change_Physic_State(0)
+	
+func Change_Physic_State(val):
+	props.physic_state['current'] = val
+	if val == 0:
 		props.physics = PROP_TEMPLATES.NORMAL
-	elif props.special_state.current == 1:
+	elif val == 1:
 		props.physics = PROP_TEMPLATES.ZIPPING
+	elif val == 2:
+		props.physics = PROP_TEMPLATES.DASHING
 	
 	pass
