@@ -14,12 +14,13 @@ var current_friction = 0
 
 
 func _ready():
-	g.Change_Prop('special_state', 0)
+	print(g.props.physics)
 	current_friction = g.props.physics.GROUNDED_FRICTION
-	
 	pass
 
 func _physics_process(delta):
+	
+	print($Collider.disabled)
 	
 	if is_on_floor():
 		current_friction = g.props.physics.GROUNDED_FRICTION
@@ -27,16 +28,18 @@ func _physics_process(delta):
 		current_friction = g.props.physics.AERIAL_FRICTION
 	
 	if is_on_floor():
-		if Input.is_action_just_pressed('ui_up'):
+		if Input.is_action_just_pressed('jump'):
 			motion.y = g.props.physics.JUMP_HEIGHT
 	
-	if Input.is_action_pressed('ui_right'):
+	if Input.is_action_pressed('right'):
 		motion.x = min(motion.x+g.props.physics.ACCEL, g.props.physics.MAX_SPEED)
 	
-	if Input.is_action_pressed('ui_left'):
+	if Input.is_action_pressed('left'):
         motion.x = max(motion.x-g.props.physics.ACCEL,-g.props.physics.MAX_SPEED)
 		
-	if Input.is_action_pressed('ui-down'):
+	if Input.is_action_pressed('down'):
+		Change_Physic_State(2)
+		motion.y = 700
 		pass
     
 	motion.y += g.props.physics.GRAVITY
@@ -45,7 +48,28 @@ func _physics_process(delta):
 	pass
 
 func _on_Area2D_body_entered(body):
-	if body.get_collision_layer_bit(1) == true:
-		g.Change_Prop('special_state', 1)
+	if body.get_collision_layer_bit(0) == true:
+		Change_Physic_State(1)
 		pass
+	pass
+	
+func _on_Area2D_body_exited(body):
+	if body.get_collision_layer_bit(0) == true:
+		Change_Physic_State(0)
+		pass
+	pass
+	
+func Change_Physic_State(val):
+	
+	var oldVal = g.props.physic_state.current
+	
+	if oldVal != val:
+		g.Change_Physic_State(val)
+		$Collider.disabled = !g.props.physics.COLLIDING
+		if g.props.physics.CANCEL_MOMENTUM == true:
+			motion = Vector2()
+			pass
 	pass 
+
+
+
