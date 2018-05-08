@@ -78,6 +78,9 @@ const PROP_TEMPLATES = {
 }
 func _ready():
 	Change_Physic_State(0)
+	var main_camera = Camera2D.new()
+	main_camera.set_name('Main Camera')
+	add_child(main_camera,true)
 	
 func Change_Physic_State(val):
 	props.physic_state['current'] = val
