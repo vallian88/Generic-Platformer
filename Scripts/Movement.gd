@@ -14,14 +14,12 @@ var current_friction = 0
 
 
 func _ready():
-	print(g.props.physics)
+	
 	current_friction = g.props.physics.GROUNDED_FRICTION
+	g.player = self
 	pass
 
 func _physics_process(delta):
-	
-	print($Collider.disabled)
-	
 	if is_on_floor():
 		current_friction = g.props.physics.GROUNDED_FRICTION
 	else:
@@ -62,7 +60,6 @@ func _on_Area2D_body_exited(body):
 func Change_Physic_State(val):
 	
 	var oldVal = g.props.physic_state.current
-	
 	if oldVal != val:
 		g.Change_Physic_State(val)
 		$Collider.disabled = !g.props.physics.COLLIDING
@@ -73,3 +70,10 @@ func Change_Physic_State(val):
 
 
 
+
+
+func _on_Camera_Area_area_entered(area):
+	#if area.get_collision_layer_bit(5) == true:
+	print(area.get_parent())
+	g.Assign_Camera_Track(area.get_parent())
+	pass # replace with function body
