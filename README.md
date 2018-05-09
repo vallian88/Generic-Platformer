@@ -1,7 +1,13 @@
 # Documentation #
 
+## Style/Themes ##
+*Possibly an eldritch horror style metroidvania, but a little cuter*
+
 ## Dev Notes ##
 There are a few 'rules' in the code base that should be followed to make sure that things stay organized:
+### To Do: ###
+* Add camera shift triggers to rooms
+* Write a system to make camera follow a track 
 ### Naming Conventions ###  
 * Functions are written in fat snake case eg. Global.gd/Change_Prop  
   
