@@ -40,6 +40,7 @@ func _physics_process(delta):
 		motion.y = 700
 		pass
     
+	Screen_Wrap()
 	motion.y += g.props.physics.GRAVITY
 	motion.x = lerp(motion.x,0,current_friction)
 	motion = move_and_slide(motion,UP)
@@ -67,6 +68,22 @@ func Change_Physic_State(val):
 			motion = Vector2()
 			pass
 	pass 
+	
+func Screen_Wrap():
+	var left_bound = g.main_camera.global_position.x - 320
+	var right_bound = g.main_camera.global_position.x + 320
+	var top_bound =  g.main_camera.global_position.y - 180
+	var bot_bound =  g.main_camera.global_position.y + 180
+	if g.props.physics.SCREEN_WRAP == true:
+		if global_position.x < left_bound:
+			global_position.x = right_bound
+		if global_position.x > right_bound:
+			global_position.x = left_bound
+		if global_position.y > bot_bound:
+			global_position.y = top_bound
+		if global_position.y < top_bound:
+			global_position.y = bot_bound
+	pass
 
 
 
@@ -74,6 +91,5 @@ func Change_Physic_State(val):
 
 func _on_Camera_Area_area_entered(area):
 	#if area.get_collision_layer_bit(5) == true:
-	print(area.get_parent())
 	g.Assign_Camera_Track(area.get_parent())
 	pass # replace with function body

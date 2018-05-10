@@ -86,6 +86,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	print(props.physics.SCREEN_WRAP)
 	if player != null && camera_track != null:
 		Camera_Follow(delta)
 	pass
@@ -100,7 +101,7 @@ func Initialize_Camera():
 	cam_node.anchor_mode = 1
 	cam_node.make_current()
 	cam_node.smoothing_enabled = true
-	cam_node.smoothing_speed = 5
+	cam_node.smoothing_speed = 3
 	
 	pass
 	
@@ -108,8 +109,10 @@ func Change_Physic_State(val):
 	props.physic_state['current'] = val
 	if val == 0:
 		props.physics = PROP_TEMPLATES.NORMAL
+		print('Entering Normal State')
 	elif val == 1:
 		props.physics = PROP_TEMPLATES.ZIPPING
+		print('Entering Zip State')
 	elif val == 2:
 		props.physics = PROP_TEMPLATES.DASHING
 	
@@ -128,15 +131,12 @@ func Distance_Sort(a,b):
 
 
 func Camera_Follow(d):
-	var path_points = camera_track.curve.get_baked_points()
-	var my_array = Vector2()
-	var points_array = [my_array]
-	
-	for x in range(path_points.size()):
-		points_array.append(path_points[x])
-		pass
-	points_array.sort_custom(self,'Distance_Sort')
-	var target_pos = Vector2(points_array[0].x,points_array[0].y)
-	main_camera.global_position = target_pos
+	if props.physics.SCREEN_WRAP == false:
+		var path_points = camera_track.curve.get_baked_points()
+		var my_array = Vector2()
+		var points_array = Array(points_array)
+		points_array.sort_custom(self,'Distance_Sort')
+		var target_pos = Vector2(points_array[0].x,points_array[0].y)
+		main_camera.global_position = target_pos
 	pass
 

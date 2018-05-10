@@ -48,6 +48,7 @@ collision_mask = 1025
 
 [node name="CameraTrack" type="Path2D" parent="." index="2"]
 
+visible = false
 position = Vector2( 0, 117.143 )
 scale = Vector2( 1, 0.714286 )
 curve = SubResource( 1 )
