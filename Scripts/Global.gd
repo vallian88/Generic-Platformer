@@ -27,11 +27,19 @@ var props = {
 		'COLLIDING' : false,
 		'SCREEN_WRAP' : false,
 		'CANCEL_MOMENTUM' : false
+	},
+	'camera' :{
+		'BOUNDS' :{
+		'LEFT_BOUND' : 0,
+		'RIGHT_BOUND' : 0,
+		'TOP_BOUND' : 0,
+		'BOT_BOUND' : 0
+		}
 	}
 }
-var main_camera
-var cam_node
-var camera_track
+#var main_camera
+#var cam_node
+#var camera_track
 var player
 
 const PROP_TEMPLATES = {
@@ -82,26 +90,6 @@ const PROP_TEMPLATES = {
 }
 func _ready():
 	Change_Physic_State(0)
-	Initialize_Camera()
-	pass
-
-func _process(delta):
-	print(props.physics.SCREEN_WRAP)
-	if player != null && camera_track != null:
-		Camera_Follow(delta)
-	pass
-	
-func Initialize_Camera():
-	main_camera = Node2D.new()
-	cam_node = Camera2D.new()
-	main_camera.set_name('Main Camera')
-	cam_node.set_name('Cam Node')
-	add_child(main_camera,true)
-	main_camera.add_child(cam_node,true)
-	cam_node.anchor_mode = 1
-	cam_node.make_current()
-	cam_node.smoothing_enabled = true
-	cam_node.smoothing_speed = 3
 	
 	pass
 	
@@ -115,28 +103,5 @@ func Change_Physic_State(val):
 		print('Entering Zip State')
 	elif val == 2:
 		props.physics = PROP_TEMPLATES.DASHING
-	
-	pass
-
-func Assign_Camera_Track(track):
-	camera_track = track
-	pass
-
-
-func Distance_Sort(a,b):
-	if player.get_global_position().distance_to(a) < player.get_global_position().distance_to(b):
-		return true
-	return false
-	
-
-
-func Camera_Follow(d):
-	if props.physics.SCREEN_WRAP == false:
-		var path_points = camera_track.curve.get_baked_points()
-		var my_array = Vector2()
-		var points_array = Array(points_array)
-		points_array.sort_custom(self,'Distance_Sort')
-		var target_pos = Vector2(points_array[0].x,points_array[0].y)
-		main_camera.global_position = target_pos
 	pass
 

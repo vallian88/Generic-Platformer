@@ -11,6 +11,7 @@ const UP = Vector2(0,-1)
 onready var g = get_node('/root/Global')
 var motion = Vector2()
 var current_friction = 0
+signal move
 
 
 func _ready():
@@ -20,12 +21,13 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	print($Collider.disabled)
 	if is_on_floor():
 		current_friction = g.props.physics.GROUNDED_FRICTION
 	else:
 		current_friction = g.props.physics.AERIAL_FRICTION
 	
-	if is_on_floor():
+	if is_on_floor() || g.props.physic_state.current == 1:
 		if Input.is_action_just_pressed('jump'):
 			motion.y = g.props.physics.JUMP_HEIGHT
 	
@@ -37,7 +39,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed('down'):
 		Change_Physic_State(2)
-		motion.y = 700
+		motion.y = 300
 		pass
     
 	Screen_Wrap()
@@ -52,44 +54,31 @@ func _on_Area2D_body_entered(body):
 		pass
 	pass
 	
-func _on_Area2D_body_exited(body):
+func _on_Internal_Area_body_exited(body):
 	if body.get_collision_layer_bit(0) == true:
 		Change_Physic_State(0)
 		pass
 	pass
 	
 func Change_Physic_State(val):
-	
 	var oldVal = g.props.physic_state.current
 	if oldVal != val:
 		g.Change_Physic_State(val)
-		$Collider.disabled = !g.props.physics.COLLIDING
+		
 		if g.props.physics.CANCEL_MOMENTUM == true:
 			motion = Vector2()
 			pass
+	$Collider.disabled = !g.props.physics.COLLIDING
 	pass 
 	
 func Screen_Wrap():
-	var left_bound = g.main_camera.global_position.x - 320
-	var right_bound = g.main_camera.global_position.x + 320
-	var top_bound =  g.main_camera.global_position.y - 180
-	var bot_bound =  g.main_camera.global_position.y + 180
 	if g.props.physics.SCREEN_WRAP == true:
-		if global_position.x < left_bound:
-			global_position.x = right_bound
-		if global_position.x > right_bound:
-			global_position.x = left_bound
-		if global_position.y > bot_bound:
-			global_position.y = top_bound
-		if global_position.y < top_bound:
-			global_position.y = bot_bound
+		if global_position.x > g.props.camera.BOUNDS.RIGHT_BOUND:
+			global_position.x = g.props.camera.BOUNDS.LEFT_BOUND
+		if global_position.x < g.props.camera.BOUNDS.LEFT_BOUND:
+			global_position.x = g.props.camera.BOUNDS.RIGHT_BOUND
+		if global_position.y > g.props.camera.BOUNDS.BOT_BOUND:
+			global_position.y = g.props.camera.BOUNDS.TOP_BOUND
+		if global_position.y < g.props.camera.BOUNDS.TOP_BOUND:
+			global_position.y = g.props.camera.BOUNDS.BOT_BOUND
 	pass
-
-
-
-
-
-func _on_Camera_Area_area_entered(area):
-	#if area.get_collision_layer_bit(5) == true:
-	g.Assign_Camera_Track(area.get_parent())
-	pass # replace with function body

@@ -73,6 +73,8 @@ shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Internal_Area" to="." method="_on_Area2D_body_entered"]
 
+[connection signal="body_exited" from="Internal_Area" to="." method="_on_Internal_Area_body_exited"]
+
 [connection signal="area_entered" from="Camera_Area" to="." method="_on_Camera_Area_area_entered"]
 
 
