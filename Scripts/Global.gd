@@ -56,7 +56,7 @@ const PROP_TEMPLATES = {
 	},
 	'ZIPPING' : {
 		'GRAVITY' : 0,
-		'ACCEL' : 300,
+		'ACCEL' : 400,
  		'MAX_SPEED' : 400,
 		'JUMP_HEIGHT' : -400,
 		'GROUNDED_FRICTION' : 0,

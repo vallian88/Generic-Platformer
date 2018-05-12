@@ -1,12 +1,5 @@
 extends KinematicBody2D
 
-
-#const GRAVITY = 15
-#const ACCEL = 50
-#const MAX_SPEED = 400
-#const JUMP_HEIGHT = -400
-#const GROUNDED_FRICTION = 0.2
-#const AERIAL_FRICTION = 0.175
 const UP = Vector2(0,-1)
 onready var g = get_node('/root/Global')
 var motion = Vector2()
@@ -21,7 +14,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	print($Collider.disabled)
 	if is_on_floor():
 		current_friction = g.props.physics.GROUNDED_FRICTION
 	else:
