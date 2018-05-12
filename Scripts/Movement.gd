@@ -4,7 +4,7 @@ const UP = Vector2(0,-1)
 onready var g = get_node('/root/Global')
 var motion = Vector2()
 var current_friction = 0
-signal move
+var zip_timer = 0
 
 
 func _ready():
@@ -14,15 +14,22 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	print(g.props.physic_state.current)
+	zip_timer -= delta
 	if is_on_floor():
+		if g.props.physic_state.current == 3:
+			Change_Physic_State(0)
 		current_friction = g.props.physics.GROUNDED_FRICTION
 	else:
 		current_friction = g.props.physics.AERIAL_FRICTION
 	
-	if is_on_floor() || g.props.physic_state.current == 1:
-		if Input.is_action_just_pressed('jump'):
+	if Input.is_action_just_pressed('jump'):
+		if is_on_floor():
 			motion.y = g.props.physics.JUMP_HEIGHT
-	
+		if g.props.physic_state.current == 1:
+			global_position.y -= 16
+			motion.y = g.props.physics.JUMP_HEIGHT
+
 	if Input.is_action_pressed('right'):
 		motion.x = min(motion.x+g.props.physics.ACCEL, g.props.physics.MAX_SPEED)
 	
@@ -42,13 +49,15 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.get_collision_layer_bit(0) == true:
-		Change_Physic_State(1)
+		if zip_timer <= 0:
+			Change_Physic_State(1)
 		pass
 	pass
 	
 func _on_Internal_Area_body_exited(body):
 	if body.get_collision_layer_bit(0) == true:
-		Change_Physic_State(0)
+		zip_timer = 1
+		Change_Physic_State(3)
 		pass
 	pass
 	

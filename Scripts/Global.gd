@@ -16,6 +16,7 @@ var props = {
 		'NORMAL' : 0,
 		'ZIPPING' : 1,
 		'NO_CLIP' : 2,
+		'NO_FRICTION': 3
 	},
 	'physics' :{
 		'GRAVITY' : 0,
@@ -44,10 +45,10 @@ var player
 
 const PROP_TEMPLATES = {
 	'NORMAL' : {
-		'GRAVITY' : 15,
-		'ACCEL' : 50,
- 		'MAX_SPEED' : 400,
-		'JUMP_HEIGHT' : -400,
+		'GRAVITY' : 16,
+		'ACCEL' : 64,
+ 		'MAX_SPEED' : 416,
+		'JUMP_HEIGHT' : -416,
 		'GROUNDED_FRICTION' : 0.2,
 		'AERIAL_FRICTION' : 0.175,
 		'COLLIDING' : true,
@@ -56,9 +57,9 @@ const PROP_TEMPLATES = {
 	},
 	'ZIPPING' : {
 		'GRAVITY' : 0,
-		'ACCEL' : 400,
- 		'MAX_SPEED' : 400,
-		'JUMP_HEIGHT' : -400,
+		'ACCEL' : 1312,
+ 		'MAX_SPEED' : 1312,
+		'JUMP_HEIGHT' : -432,
 		'GROUNDED_FRICTION' : 0,
 		'AERIAL_FRICTION' : 0,
 		'COLLIDING' : false,
@@ -68,7 +69,7 @@ const PROP_TEMPLATES = {
 	'DASHING' : {
 		'GRAVITY' : 0,
 		'ACCEL' : 0,
- 		'MAX_SPEED' : 200,
+ 		'MAX_SPEED' : 192,
 		'JUMP_HEIGHT' : 0,
 		'GROUNDED_FRICTION' : 0,
 		'AERIAL_FRICTION' : 0,
@@ -78,12 +79,23 @@ const PROP_TEMPLATES = {
 	},
 	'NO_CLIP' : {
 		'GRAVITY' : 15,
-		'ACCEL' : 50,
- 		'MAX_SPEED' : 400,
-		'JUMP_HEIGHT' : -400,
+		'ACCEL' : 64,
+ 		'MAX_SPEED' : 416,
+		'JUMP_HEIGHT' : -416,
 		'GROUNDED_FRICTION' : 0.2,
 		'AERIAL_FRICTION' : 0.175,
 		'COLLIDING' : false,
+		'SCREEN_WRAP' : false,
+		'CANCEL_MOMENTUM' : false
+	},
+	'NO_FRICTION' : {
+		'GRAVITY' : 15,
+		'ACCEL' : 64,
+ 		'MAX_SPEED' : 416,
+		'JUMP_HEIGHT' : -416,
+		'GROUNDED_FRICTION' : 0.2,
+		'AERIAL_FRICTION' : 0,
+		'COLLIDING' : true,
 		'SCREEN_WRAP' : false,
 		'CANCEL_MOMENTUM' : false
 	},
@@ -103,5 +115,8 @@ func Change_Physic_State(val):
 		print('Entering Zip State')
 	elif val == 2:
 		props.physics = PROP_TEMPLATES.DASHING
+	elif val == 3:
+		print('Entering No Friction State')
+		props.physics = PROP_TEMPLATES.NO_FRICTION
 	pass
 

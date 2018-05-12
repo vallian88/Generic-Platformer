@@ -35,8 +35,8 @@ func Update_Camera(d):
 			desired_pos = -last_player_pos * screen_size
 		
 		var new_bounds = {
-		'LEFT_BOUND' : -desired_pos.x - 20,
-		'RIGHT_BOUND' : -1*(desired_pos.x - (screen_size.x)-20),
+		'LEFT_BOUND' : -desired_pos.x,
+		'RIGHT_BOUND' : -1*(desired_pos.x - (screen_size.x)),
 		'TOP_BOUND' : -desired_pos.y,
 		'BOT_BOUND' : -1*(desired_pos.y - (screen_size.y))
 		}
