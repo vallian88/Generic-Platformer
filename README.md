@@ -34,10 +34,10 @@ There are a few 'rules' in the code base that should be followed to make sure th
 
 
 ## Item progression ##
-1.Bombs (blowing up obstacles)
-3. Double Jump
+1. Bombs (blowing up obstacles)
+2. Double Jump
 3. Sickle upgrade I (allowing for using the sickle to swing on hooks)
-4.Bomb Upgrade I (Bombs can now be used to automatically escape from combat, costing some amount of health)
+4. Bomb Upgrade I (Bombs can now be used to automatically escape from combat, costing some amount of health)
 5. A dash
 6. Some kind of ground pound, used to push in large switches
 7. Sickle Upgrade II (used to climb most walls)
