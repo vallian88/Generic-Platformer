@@ -20,7 +20,7 @@ There are a few 'rules' in the code base that should be followed to make sure th
 ## Combat ##
 ### Offense ###
 #### Sickle ####
-* The first of the players 2 basic attacks is a slash with the sickle *
+* The first of the players 2 basic attacks is a slash with the sickle 
 * An enemy is targeted, bring up the sickle attack QTE
 * A pattern is shown to the player in a square and they take control of a cursor
 * moving the cursor along the points ofthe pattern will add to the attacks damage
