@@ -14,7 +14,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	print(g.props.physic_state.current)
 	zip_timer -= delta
 	if is_on_floor():
 		if g.props.physic_state.current == 3:
