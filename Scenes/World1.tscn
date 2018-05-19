@@ -42,7 +42,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -74,7 +74,11 @@ __meta__ = {
 
 [node name="BackTiles" type="TileMap" parent="." index="2"]
 
+<<<<<<< HEAD
 z_index = -1
+=======
+position = Vector2( -108.329, 0 )
+>>>>>>> Camera_Tracking
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
