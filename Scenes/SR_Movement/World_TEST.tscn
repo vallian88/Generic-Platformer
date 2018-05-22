@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://BasicTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://DetailTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Sprites/Tiles/BasicTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Sprites/Tiles/OverlayTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Sprites/Plane.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/SR_Movement/Player.tscn" type="PackedScene" id=4]
 

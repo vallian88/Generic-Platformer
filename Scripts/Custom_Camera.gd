@@ -1,6 +1,6 @@
 extends Node
 
-onready var screen_size = Vector2(640,360)
+onready var screen_size = Vector2(256,144)
 onready var g = get_node('/root/Global')
 onready var last_player_pos = Get_Player_Grid_Pos()
 var desired_pos

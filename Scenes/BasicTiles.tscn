@@ -4,12 +4,12 @@
 [ext_resource path="res://Sprites/Tiles/DirtAutoTile.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Tiles/tile_jungle_ground_brown.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="01" type="Sprite" parent="." index="0"]
 
@@ -34,7 +34,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="02" type="Sprite" parent="." index="1"]
@@ -61,7 +61,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="03" type="Sprite" parent="." index="2"]
@@ -88,7 +88,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="04" type="Sprite" parent="." index="3"]
@@ -115,7 +115,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="05" type="Sprite" parent="." index="4"]
@@ -142,7 +142,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="06" type="Sprite" parent="." index="5"]
@@ -169,7 +169,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="07" type="Sprite" parent="." index="6"]
@@ -196,7 +196,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="08" type="Sprite" parent="." index="7"]
@@ -223,7 +223,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="09" type="Sprite" parent="." index="8"]
@@ -268,7 +268,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="12" type="Sprite" parent="." index="11"]
@@ -295,7 +295,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="13" type="Sprite" parent="." index="12"]
@@ -322,7 +322,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="14" type="Sprite" parent="." index="13"]
@@ -349,7 +349,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="15" type="Sprite" parent="." index="14"]
@@ -376,7 +376,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="16" type="Sprite" parent="." index="15"]
@@ -403,7 +403,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="17" type="Sprite" parent="." index="16"]
@@ -430,7 +430,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="18" type="Sprite" parent="." index="17"]
@@ -457,7 +457,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="19" type="Sprite" parent="." index="18"]
@@ -485,7 +485,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="20" type="Sprite" parent="." index="19"]
@@ -512,7 +512,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="21" type="Sprite" parent="." index="20"]
@@ -539,7 +539,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="22" type="Sprite" parent="." index="21"]
@@ -566,7 +566,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="23" type="Sprite" parent="." index="22"]
@@ -593,7 +593,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="24" type="Sprite" parent="." index="23"]
@@ -620,7 +620,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="25" type="Sprite" parent="." index="24"]
@@ -647,7 +647,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="26" type="Sprite" parent="." index="25"]
@@ -674,7 +674,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="27" type="Sprite" parent="." index="26"]
@@ -701,7 +701,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="28" type="Sprite" parent="." index="27"]
@@ -728,7 +728,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="29" type="Sprite" parent="." index="28"]
@@ -755,7 +755,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="30" type="Sprite" parent="." index="29"]
@@ -782,7 +782,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="31" type="Sprite" parent="." index="30"]
@@ -809,7 +809,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="32" type="Sprite" parent="." index="31"]
@@ -836,7 +836,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="33" type="Sprite" parent="." index="32"]
@@ -863,7 +863,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="34" type="Sprite" parent="." index="33"]
@@ -890,7 +890,7 @@ bounce = 0.0
 
 visible = false
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 

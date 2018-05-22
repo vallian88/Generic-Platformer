@@ -1,42 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://BasicTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/SR_Movement/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/SR_Movement/Custom_Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SR_Movement/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SR_Movement/Custom_Camera.tscn" type="PackedScene" id=2]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
-[node name="BaseTiles" type="TileMap" parent="." index="0"]
-
-position = Vector2( 16, 16 )
-mode = 0
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -1, 8, 0, -65516, 13, 0, -65515, 6, 0, -65514, 6, 0, -65513, 6, 0, -65512, 6, 0, -65511, 6, 0, -65510, 6, 0, -65509, 6, 0, -65508, 6, 0, -65507, 6, 0, -65506, 6, 0, -65505, 6, 0, -65504, 6, 0, 65535, 8, 0, 19, 14, 0, 20, 8, 0, 36, 5, 0, 37, 5, 0, 39, 7, 0, 40, 8, 0, 131071, 8, 0, 65555, 7, 0, 65556, 8, 0, 65575, 7, 0, 65576, 8, 0, 196607, 8, 0, 131091, 7, 0, 131092, 8, 0, 131105, 5, 0, 131106, 5, 0, 131111, 7, 0, 131112, 8, 0, 262143, 8, 0, 196627, 7, 0, 196628, 8, 0, 196647, 7, 0, 196648, 8, 0, 327679, 8, 0, 262163, 7, 0, 262164, 8, 0, 262183, 7, 0, 262184, 8, 0, 393215, 8, 0, 327699, 7, 0, 327700, 8, 0, 327715, 5, 0, 327716, 5, 0, 327719, 7, 0, 327720, 8, 0, 458751, 8, 0, 393255, 11, 0, 393256, 12, 0, 524287, 8, 0, 458784, 5, 0, 458785, 5, 0, 589823, 8, 0, 655359, 8, 0, 720895, 8, 0, 655360, 5, 0, 655361, 5, 0, 655362, 5, 0, 655363, 5, 0, 655364, 5, 0, 655365, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 5, 0, 655379, 5, 0, 655380, 5, 0, 655381, 5, 0, 655382, 5, 0, 655383, 5, 0, 655384, 5, 0, 655385, 5, 0, 655386, 5, 0, 655387, 5, 0, 655388, 5, 0, 655389, 5, 0, 655390, 5, 0, 655391, 5, 0, 655392, 5, 0, 655393, 5, 0, 655394, 5, 0, 655395, 5, 0, 655396, 5, 0, 655397, 5, 0, 655398, 5, 0, 655399, 5, 0, 655400, 5, 0, 655401, 5, 0, 655402, 5, 0, 655412, 5, 0, 655413, 5, 0, 655414, 5, 0, 655415, 5, 0, 786406, 5, 0, 786407, 5, 0, 786408, 5, 0, 786409, 5, 0, 786410, 5, 0, 786411, 5, 0, 2752513, 8, 0, 2752514, 8, 0, 2752515, 8, 0, 2752516, 8, 0, 2752517, 8, 0, 2752518, 8, 0, 2752519, 8, 0, 2752520, 8, 0, 2752521, 8, 0, 2752522, 8, 0, 2752523, 8, 0, 2752524, 8, 0, 2752525, 8, 0, 2752526, 8, 0, 2752527, 8, 0, 2752528, 8, 0, 2752529, 8, 0, 2752530, 8, 0, 2752531, 8, 0, 2752532, 8, 0, 2752533, 8, 0, 2752534, 8, 0, 2752535, 8, 0, 2752536, 8, 0, 2752537, 8, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 230, -120 )
 collision_mask = 1025
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Node" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Node" parent="." index="1" instance=ExtResource( 2 )]
 
 

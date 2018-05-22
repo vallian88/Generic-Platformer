@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Tiles/Spikes.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Tiles/tile_jungle_ground_brown.png" type="Texture" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="01" type="Sprite" parent="." index="0"]
 
