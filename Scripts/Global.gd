@@ -46,9 +46,9 @@ var player
 const PROP_TEMPLATES = {
 	'NORMAL' : {
 		'GRAVITY' : 16,
-		'ACCEL' : 64,
- 		'MAX_SPEED' : 416,
-		'JUMP_HEIGHT' : -416,
+		'ACCEL' : 16,
+ 		'MAX_SPEED' : 128,
+		'JUMP_HEIGHT' : -320,
 		'GROUNDED_FRICTION' : 0.2,
 		'AERIAL_FRICTION' : 0.175,
 		'COLLIDING' : true,

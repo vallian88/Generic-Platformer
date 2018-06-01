@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump1.png-9749e5d58f27aeec18bdc0b4f8be9025.stex"
+path="res://.import/run5.png-7a558c7f813d9fca7547a4237fa7818f.stex"
 
 [deps]
 
-source_file="res://Sprites/Player/Jump1.png"
-source_md5="336006d4101d48f9d7107ac1ab960a53"
+source_file="res://Sprites/Player/run5.png"
+source_md5="545601e85808e7b588115b7779c8562e"
 
-dest_files=[ "res://.import/Jump1.png-9749e5d58f27aeec18bdc0b4f8be9025.stex" ]
-dest_md5="bf8227b2d398ce826a454d009dbc1c1e"
+dest_files=[ "res://.import/run5.png-7a558c7f813d9fca7547a4237fa7818f.stex" ]
+dest_md5="3578591a76760ce236c84dd8e2eff612"
 
 [params]
 

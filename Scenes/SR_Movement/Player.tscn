@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Movement.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/Rat.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/idle0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/idle1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/run0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/run1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/run2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/run3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/run4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/run5.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -9,40 +16,56 @@ custom_solver_bias = 0.0
 radius = 12.0
 height = 8.0
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "IdleAnim",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "RunAnim",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 8.0
 height = 8.0
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 128.0
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
 
 [node name="Collider" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
-_sections_unfolded = [ "Offset", "Transform" ]
+frames = SubResource( 2 )
+animation = "IdleAnim"
+frame = 5
+playing = true
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Internal_Area" type="Area2D" parent="." index="2"]
 
+visible = false
 position = Vector2( 0, 7 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -55,12 +78,14 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Internal_Area" index="0"]
 
+visible = false
 position = Vector2( 0, -7 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera_Area" type="Area2D" parent="." index="3"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -74,7 +99,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_Area" index="0"]
 
-shape = SubResource( 3 )
+visible = false
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Internal_Area" to="." method="_on_Area2D_body_entered"]
 

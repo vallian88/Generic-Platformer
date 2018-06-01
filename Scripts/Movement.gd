@@ -31,13 +31,19 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed('right'):
 		motion.x = min(motion.x+g.props.physics.ACCEL, g.props.physics.MAX_SPEED)
+		$Sprite.flip_h = false
+		$Sprite.play("RunAnim")
 	
-	if Input.is_action_pressed('left'):
-        motion.x = max(motion.x-g.props.physics.ACCEL,-g.props.physics.MAX_SPEED)
-		
-	if Input.is_action_pressed('down'):
+	elif Input.is_action_pressed('left'):
+		motion.x = max(motion.x-g.props.physics.ACCEL,-g.props.physics.MAX_SPEED)
+		$Sprite.flip_h = true
+		$Sprite.play("RunAnim")
+	
+	elif Input.is_action_pressed('down'):
 		Change_Physic_State(2)
 		motion.y = 300
+	else:
+		$Sprite.play("IdleAnim")
 		pass
     
 	Screen_Wrap()
